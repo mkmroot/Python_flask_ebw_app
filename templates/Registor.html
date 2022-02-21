@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href= {{url_for ('static', filename='logins.css', _external=True)}}>
+    <title>Signup_Page</title>
+
+
+</head>
+<body>
+    <h1> Registration Page </h1>
+    <form action="/signup" method="POST">
+        
+        User Name: <br>
+        <input type="text" placeholder="Enter your Name." name="u_name" required> <br>
+        Employee Id: <br>
+        <input type="text" placeholder="Enter your ID No." name="e_id" required> <br>
+        Password:  <br>
+        <input type="password" placeholder="Enter your Password" name="passwd1" required> <br>
+        Confirm-Password:  <br>
+        <input type="text" placeholder="Enter your Password" name="passwd2" required> <br>
+        
+        <input type="submit" value="Sign Up" id="submit">
+        {% with msgs = get_flashed_messages( ) %}
+            {% for msg in msgs  %}
+            <font color=#a00> {{msg}} </font>
+            {% endfor %}
+        {% endwith %}
+    </form>
+    <p>Already Registration, Please <a href="/login">Signin</a></p>
+</body>
+</html>

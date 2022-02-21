@@ -1,0 +1,144 @@
+
+<html>
+    <head>
+        <title>work.web</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" href= {{ url_for ('static', filename='work_style.css', _external=True)}}>
+
+    </head>
+
+    <body>
+      
+    <div class="container"> 
+        <div class="menu_bar">
+            <ul>
+                <li>
+                    <a class="active">  Home </a>
+                   
+                </li>
+                <li>
+                    Options
+                    <ul>
+                        <li>Gallery</li>
+                        <li>Theory</li>
+                    </ul>
+                </li>
+                <li>
+                    About Us
+                </li>
+                <li>
+                                               
+                    <a href = "/logout" > Sign out </a>
+                    
+                </li>
+                
+            </ul>
+             
+        <h4> <font face ="Comic Sans MS" >Welcome {{name}} </font></h4>
+        
+        </div>
+        
+        <br>  
+    <div class="headerbox"> 
+        
+        <h1> INDIAN SPACE RESEARCH ORGANISATION </h1>
+        <div class="logo1">
+            <img src= "static/ISROlogo.png" width=150px> 
+        </div>
+        <div class="logo2">
+            <img src= 'static/LPSClogo.png' width=150px> 
+        </div>
+        <h2> LIQUID PROPULSION SYSTEM CENTRE</h2>
+        <h2> BANGALORE</h2><br>
+        
+        <img src='static/lpscimage.gif'  width=400px id="photo">
+     <br><br><hr><br>  
+    </div>
+        <h3 color="red"> ELECTRON BEAM PREDICTOR </font></h3>
+        
+       
+
+    <div class="formbox"> 
+        
+<!------------------- Form Start ----------------------->
+      
+
+        <form id="form_in" action="/" method="POST" >
+           
+
+        <label> Machine Name : </label>
+                            
+        <select type='text'id="macn" name="mach_n1">
+            <option> Please Select </option>
+            <option>IPR-BODY TO BODY CAP</option>
+            <option>FILTER-FLANG TO COVER</option>
+            <option>BPLV-INLET TUBE TO FILTER</option>
+        </select> 
+
+            <br>
+            <label> Component Name : </label>
+
+                <select type='text' id="comp" name="comp_n1" required>
+                    <option> Please Select </option>
+                    <option>TM 1m3</option>
+                    <option>CVE 1ft3</option>
+                    <option>SST 35M3</option>
+                </select>  
+            <br>
+
+            <label> Material Name : </label>
+            
+            <select type='text' id="mat" name="mat_n1" required>
+                    <option> Please Select </option>
+                    <option>SS304L</option>
+                    <option>SS ALLOY</option>
+                    <option>INCONEL</option>
+                    <option>TITANIUM</option>
+            </select>
+                <br>
+            <label> Joint Diameter : </label>
+        <inbox> <input type="number" step="any" name='j_dia1' id='j_dia' required> mm   </inbox>
+                <br>
+                <label> Joint Depth : </label>
+        <inbox> <input type='number' step="any" name='j_dept1' id='j_dep' required> mm   </inbox>
+                <br>
+                <label> Backup : </label>
+        <inbox> <input type='number' step="any" name='backup1' id='backup' required> mm   </inbox>
+                <br>
+                <label> GTWD :</label> 
+        <inbox> <input type='number' step="any" name='gtwd1' id='gtwd' required> mm   </inbox>
+                <br>
+                <label> Max DOP :</label>
+        <inbox> <input type='number'  step="any" name='max_dop1' id='max_dop' required> mm   </inbox>
+                <br>
+                <label> Min DOP :</label>
+        <inbox> <input type='number' step="any" name='min_dop1' id='min_dop' required> mm   </inbox>
+                <br>
+                <input type = "button" id="submit" value="Predict" 
+                onclick= "predict_func()"> 
+        <br>
+        <div class="resultbox">         
+            
+            <p>Predicted Focus Current : <input type='number' step="any" id="fc" name="pfc1" readonly>  </p>
+            <p>Predicted Beam Current : <input type='number' step="any" id="bc" name="pbc1" readonly>  </p>
+
+        </div>     
+
+            <input type="submit" id="printe" value="Save & Print" 
+            onclick="print_func()">
+
+        </form>
+
+    <!-----------------------form end---------------------->
+    
+                   
+    </div>       
+ </div> 
+
+<br><br>
+</body>
+
+<script type="text/javascript" src='static/ebw_calc.js'></script>
+
+</html>

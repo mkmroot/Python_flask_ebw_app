@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Format</title>
+
+    <style>
+        body{margin:50px;}
+        p{font-size: 16px;}
+        span{font-family: 'Courier New', Courier, monospace;
+                color:blue; font-size: 18px; font-weight: 30;
+            }
+    </style>
+
+</head>
+<body>
+    <h2>  EBW Pediction Report  </h2>
+    <p>Date/Time : <span id="d"> </span></p>
+    <hr><br>
+    <p>Machine Name : <span id="mn"></span> </p>
+    <p>Component Name : <span id="cn"></span> </p>
+    <p>Material Name : <span id="mtn"></span> </p>
+    <p>Joint Diameter : <span id="jdi"></span> </p>
+    <p>Joint Depth : <span id="jd"></span> </p>
+    <p>Backup : <span id="bkp"></span> </p>
+    <p>GTWD : <span id="g"></span> </p>
+    <p>Max DOP : <span id="mad"></span> </p>
+    <p>Min DOP : <span id="mid"></span> </p>
+    <hr><br>
+    <p>Predicted Focus Current : <span id="pf"></span> </p>
+    <p>Predicted Beam Current : <span id="pb"></span> </p>
+     
+        
+
+    <br><br><br><br><br><br><br><br>
+    <button onclick="printf()" > Print </button>
+    <br><br>
+
+</body>
+
+<script>
+
+    var dt = new Date();    
+    document.getElementById("d").innerHTML= dt.toLocaleString();  // Set Date and Time
+       
+    document.getElementById("mn").innerHTML= localStorage.getItem("n1");  // Data Receive From another Html
+    document.getElementById("cn").innerHTML= localStorage.getItem("n2");
+    document.getElementById("mtn").innerHTML= localStorage.getItem("n3");
+    document.getElementById("jdi").innerHTML= localStorage.getItem("v1");
+    document.getElementById("jd").innerHTML= localStorage.getItem("v2");
+    document.getElementById("bkp").innerHTML= localStorage.getItem("v3");
+    document.getElementById("g").innerHTML= localStorage.getItem("v4");
+    document.getElementById("mad").innerHTML= localStorage.getItem("v5");
+    document.getElementById("mid").innerHTML= localStorage.getItem("v6");
+    document.getElementById("pf").innerHTML= localStorage.getItem("r1");
+    document.getElementById("pb").innerHTML= localStorage.getItem("r2");
+
+
+    function printf()  // click on Print button
+    {
+        window.print();  
+        
+    }
+
+    
+</script>
+
+</html>

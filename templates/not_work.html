@@ -1,0 +1,72 @@
+
+<html>
+    <head>
+        <title>work.web</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" href= {{ url_for ('static', filename='work_style.css', _external=True)}}>
+
+    </head>
+
+    <body>
+      
+    <div class="container"> 
+        <div class="menu_bar">
+            <ul>
+                <li>
+                    <a class="active">  Home </a>
+                   
+                </li>
+                <li>
+                    Options
+                    <ul>
+                        <li>Gallery</li>
+                        <li>Theory</li>
+                    </ul>
+                </li>
+                <li>
+                    About Us
+                </li>
+                <li>
+                   
+                    <a href = "/login" > Sign in </a>
+                   
+                </li>
+                
+            </ul>
+             
+        <h4> <font face ="Comic Sans MS" >Welcome </font></h4>
+        
+        </div>
+        
+        <br>  
+    <div class="headerbox"> 
+        
+        <h1> NAME OF YOUR ORGANISATION </h1>
+        <div class="logo1">
+            <img src= "static/logo1.png" width=150px> 
+        </div>
+        <div class="logo2">
+            <img src= 'static/logo2.png' width=150px> 
+        </div>
+        <h2> NAME OF YOUR SYTEM CENTRE</h2>
+        <h2> BANGALORE</h2><br>
+        
+        <img src='static/siteimage.jpg'  width=400px id="photo">
+     <br><br><hr><br>  
+    </div>
+        <h3 color="red"> ELECTRON BEAM PREDICTOR </font></h3>
+        
+       
+
+    <div class="formbox"> 
+        
+<!------------------- Form Start ----------------------->
+
+      <h2> Please <a href = "/login">Sign In</a> to Enter</h2>
+    </div>
+</body>
+
+<script type="text/javascript" src='static/ebw_calc.js'></script>
+
+</html>
